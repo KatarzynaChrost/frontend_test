@@ -1,0 +1,137 @@
+@import '../../styles/variables.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 3rem;
+  background-color: $base_gray;
+  flex: 1 1;
+  padding: auto;
+}
+
+.header {
+  &__title {
+    position: relative;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    font-size: 3.4rem;
+
+    &::after {
+      content: '';
+      width: 16rem;
+      height: 1px;
+      background-color: $base_white;
+      position: absolute;
+      bottom: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.mainWrapper {
+  display: flex;
+
+  .sectionWrapper {
+    flex: 1;
+
+    .blockTitle {
+      margin-bottom: 5rem;
+      font-size: 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.inputSection {
+  display: flex;
+}
+
+.radioButtonsContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.2rem;
+
+  label {
+    cursor: pointer;
+    color: $base_label;
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+
+    &:hover {
+      font-weight: bold;
+    }
+
+    input {
+      appearance: none;
+      width: 2rem;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background-clip: content-box;
+      border: 5px solid $base_white;
+      background-color: transparent;
+
+      &:checked {
+        box-shadow: inset 0 0 0 3px $base_gray;
+        background-color: $base_white;
+      }
+    }
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  button {
+    padding: 1rem;
+    min-width: 10rem;
+    max-width: 30%;
+    border: 1px solid $base_white;
+    background-color: $base_gray;
+    color: $gray_accent;
+    font-weight: bolder;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $accent;
+      color: $base_white;
+    }
+  }
+}
+
+.resultBlock {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 100%;
+
+  &__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__description {
+    font-size: 1.3rem;
+    text-align: center;
+    color: $gray_accent;
+    max-height: 20rem;
+    overflow-y: auto;
+  }
+}

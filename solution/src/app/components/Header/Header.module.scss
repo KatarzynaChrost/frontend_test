@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: $background_header;
+  padding: 1rem 5rem;
+
+  .logo {
+    color: $base_white;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $background_logo;
+    padding-top: 0.5rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+  .title {
+    font-weight: 200;
+    text-align: end;
+  }
+}

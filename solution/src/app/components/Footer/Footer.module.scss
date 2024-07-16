@@ -1,0 +1,183 @@
+@import '../../styles/variables.scss';
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem 5rem;
+  background-color: $background_footer;
+  color: $base_gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  z-index: 1;
+
+  .cssAwesome {
+    font-size: 1.8rem;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 4.4rem;
+      top: 1.9rem;
+      width: 7.6rem;
+      height: 7.6rem;
+      border: 1px solid $base_gray;
+    }
+
+    &:hover {
+      color: $gray_accent;
+
+      &:after {
+        animation: rotateAnimation 1500ms forwards;
+        border-color: $accent;
+      }
+    }
+  }
+
+  @keyframes rotateAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .company {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &__decor {
+      width: 3.4rem;
+      height: 1px;
+      border: none;
+      background-color: $base_gray;
+    }
+  }
+
+  .container {
+    width: 300px;
+    position: relative;
+    z-index: -1;
+
+    .showButton {
+      display: block;
+      border: 1px solid $base_gray;
+      background-color: $background_footer;
+      padding: 1rem;
+      width: 100%;
+      text-transform: uppercase;
+      color: $gray_accent;
+      font-size: 1.2rem;
+      font-weight: bolder;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      border-radius: 3px;
+      z-index: 10;
+
+      &:hover {
+        color: $base_white;
+        border-color: $base_white;
+        cursor: pointer;
+
+        .showButton__text::after {
+          border-right: 3px solid $base_white;
+          border-top: 3px solid $base_white;
+          transform: rotate(135deg);
+          top: 0.3rem;
+        }
+      }
+
+      &__text {
+        position: relative;
+        margin-left: -1rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: -1.8rem;
+          top: 0.5rem;
+          width: 0.5rem;
+          height: 0.5rem;
+          border-right: 3px solid $gray_accent;
+          border-top: 3px solid $gray_accent;
+          transform: rotate(-45deg);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+
+    .options {
+      background-color: $base_white;
+      padding: 1rem;
+      border-radius: 3px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      position: absolute;
+      bottom: -2rem;
+      z-index: -10;
+      transform: translateY(-2rem);
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+
+      &.showOptions {
+        transform: translateY(-8.8rem);
+        opacity: 1;
+      }
+
+      &__btn {
+        display: block;
+        background: none;
+        border: none;
+        color: $background_footer;
+        padding: 0.5rem;
+        padding-left: 1.6rem;
+        text-align: left;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 1rem;
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+          color: $accent;
+
+          &::before {
+            border-color: $accent;
+          }
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0.3rem;
+          top: 0.75rem;
+          width: 0.5rem;
+          height: 0.5rem;
+          border-right: 2px solid $background_footer;
+          border-top: 2px solid $background_footer;
+          transform: rotate(45deg);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -3.95rem;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      background-color: $background_footer;
+      z-index: -5;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
